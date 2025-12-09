@@ -127,65 +127,114 @@ body{
 }
 
 
-@media (max-width: 768px) {
-    .navbar {
+@media (max-width: 768px){
+    .navbar{
+        /* Change to column layout to stack name and links */
+        flex-direction: column; 
+        align-items: flex-start; /* Align items to the left */
         padding: 15px 20px;
     }
 
-    .nav-data {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 10px;
+    .nav-name{
+        margin-left: 0; /* Reset margin */
+        margin-bottom: 10px; /* Space between name and links */
     }
 
-    .inner {
-        padding: 30px 20px;
-        width: 90%;
+    .nav-data{
+        /* Let the links wrap naturally and take full width */
+        width: 100%;
+        margin: 0; 
+        justify-content: space-around; /* Spread links evenly */
+        gap: 15px 10px; /* Vertical and horizontal gap */
+        flex-wrap: wrap; 
+        padding-bottom: 5px;
+    }
+    
+    .nav-data li{
+        flex-basis: auto; /* Allow items to size naturally */
+    }
+
+    .question-header{
+        /* Ensure the question header is always on top */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .question-header h3{
+        /* Reset padding for better flow when question count is static */
+        padding-right: 0; 
+        margin-top: 0;
+        order: 2; /* Place question text below the count on small screens */
+    }
+
+    .question-header p{
+        /* Make question count static and move it to the top right */
+        position: static;
+        text-align: right;
+        margin-top: 0;
+        margin-bottom: 10px;
+        order: 1; /* Place question count on top */
+    }
+
+    #quiz-container{
+        margin: 15px; /* Ensure a minimum margin on the sides */
+        padding: 18px;
+    }
+    
+    .question-text{
+        font-size: 18px;
+        margin-top: 30px; /* Reduce top margin */
     }
 }
 
-
-@media (max-width: 480px) {
-    .nav-name {
+/* 🤳 Extra Small Devices (Smartphones) - Max 480px */
+@media (max-width: 480px){
+    .nav-name{
         font-size: 18px;
     }
 
-    .nav-data li {
+    .nav-data{
+        /* In very small screens, stack links more clearly */
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 5px;
+        margin-top: 5px;
+    }
+    .nav-data li{
         font-size: 16px;
     }
 
-    .popup-dropdowns {
-        flex-direction: column;
-        gap: 10px;
+    #quiz-container{
+        /* Reduce overall size and padding for smaller screens */
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .question-header h3{
+        font-size: 20px;
+    }
+    
+    .question-header p{
+        font-size: 20px;
     }
 
-    .popup-dropdowns select {
+    .result-container{
+        padding: 20px;
+        margin: 40px 10px;
+    }
+
+    .result-container h2{
+        font-size: 24px;
+    }
+
+    .result-container p{
+        font-size: 18px;
+    }
+    
+    .result-container button{
+        /* Stack buttons vertically if needed, or adjust padding */
+        display: block;
         width: 100%;
-    }
-}
-
-@media (max-width: 992px) {
-    .nav-data {
-        gap: 30px;
-    }
-}
-
-
-@media (max-width: 768px) {
-    .navbar {
-        padding: 15px 20px;
-    }
-
-    .nav-data {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .inner {
-        padding: 30px 20px;
-        width: 90%;
+        margin: 8px 0;
     }
 }
