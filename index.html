@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="navbar">
+        <h3 class="nav-name">IQ Battle</h3>
+        <ul class="nav-data">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <section class="main-body">
+        <div class="outer">
+            <h1>Welcome to IQ Battle</h1>
+            <div class="line"></div>
+            <div class="inner">
+                <h3>Put your knowledge to the test <br /> - Play & Learn</h3>
+                <button class="begin" onclick="viewPopUp()">Start</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="pop-up">
+        
+        <div class="popup-content">
+            <span onclick="hidePopup()">&times;</span>
+            <h3>Choose your game</h3>
+            <div class="popup-dropdowns">
+                <select name="" id="category">
+                    <option value="">Random</option>
+                    <option value="9">General knowledge</option>
+                    <option value="17">Science</option>
+                    <option value="19">Maths</option>
+                    <option value="23">History</option>
+                    <option value="21">Sports</option>
+                </select>
+                <select name="" id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <button id="startbtn" onclick="onStartGameButtonClicked()">Start</button>
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
